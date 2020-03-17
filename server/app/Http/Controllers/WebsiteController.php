@@ -15,7 +15,8 @@ class WebsiteController extends Controller
      */
     public function index()
     {
-        return WebsiteResource::collection(Website::all());
+        $websites = Website::paginate(10);
+        return WebsiteResource::collection($websites);
     }
 
     /**
