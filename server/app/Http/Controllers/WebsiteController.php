@@ -23,7 +23,7 @@ class WebsiteController extends Controller
             $websites->where('name', 'like', '%' . $request->filter . '%');
         }
 
-        return WebsiteResource::collection($websites->paginate(10));
+        return WebsiteResource::collection($websites->paginate(8));
     }
 
     /**
@@ -34,6 +34,11 @@ class WebsiteController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'url' => 'required|unique:websites',
+        ]);
+
         Website::create([
             'name' => $request->name,
             'url' => $request->url,
