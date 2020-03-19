@@ -50,7 +50,15 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    proxy: true // Can be also an object with default options
+  },
+  /*
+   ** Axios proxy configuration
+   */
+  proxy: {
+    '/api/': 'http://localhost:8000'
+  },
   /*
    ** Build configuration
    */
@@ -59,5 +67,9 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+
+  router: {
+    middleware: 'frontpage'
   }
 }
