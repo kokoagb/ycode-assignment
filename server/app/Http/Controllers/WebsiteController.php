@@ -13,10 +13,17 @@ class WebsiteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $websites = Website::paginate(10);
-        return WebsiteResource::collection($websites);
+
+        $order_by = $request->query('orderBy', 'name');
+        $websites = Website::orderBy($order_by, 'asc');
+
+        if ($request->has('filter')) {
+            $websites->where('name', 'like', '%' . $request->filter . '%');
+        }
+
+        return WebsiteResource::collection($websites->paginate(10));
     }
 
     /**
