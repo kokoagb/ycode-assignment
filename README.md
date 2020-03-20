@@ -4,6 +4,15 @@ This app allows adding new websites as well as displaying a list of already exis
 
 Filtering, pagination and sorting are implemented on the server side.
 
+Servers side technology:
+
+- Laravel
+
+Client side technology:
+
+- Nuxt
+- Tailwind
+
 ## Images
 
 Website list:
