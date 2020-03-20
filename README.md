@@ -18,6 +18,7 @@ To initialise the project after cloning you'll have to follow these steps from t
 
 - Install dependencies with composer
 - Gerenate app key
+- Adjust your database creds (I used sqlite)
 - Migrate
 - Seed
 - Run the server
