@@ -1,14 +1,20 @@
 <template>
   <container>
     <heading-1>Websites</heading-1>
-    <div class="flex items-baseline">
+    <div class="md:flex md:flex-wrap md:items-baseline">
       <filter-el
         v-model="filter"
         class="flex-1 mr-4"
         @input="handleFilterChange"
       />
-      Sort by:
-      <order-by v-model="orderBy" class="ml-2" @input="updateWebsites" />
+      <div class="flex items-baseline">
+        Sort by:
+        <order-by
+          v-model="orderBy"
+          class="ml-2 flex-1"
+          @input="updateWebsites"
+        />
+      </div>
     </div>
     <div v-if="loading">
       Loading...
