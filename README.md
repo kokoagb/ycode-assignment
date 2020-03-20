@@ -23,7 +23,7 @@ Add website:
 
 ## Instructions
 
-To initialise the project after cloning you'll have to follow these steps from the Server directory:
+To initialise the project after cloning you'll have to follow these steps from the Server directory (tested with PHP version 7.4.2):
 
 - Install dependencies with composer
 - Gerenate app key
@@ -32,4 +32,4 @@ To initialise the project after cloning you'll have to follow these steps from t
 - Seed
 - Run the server
 
-In the Client directory, install dependencies first then run the app
+In the Client directory, install dependencies first then run the app (tested with Node v10.16.3)
